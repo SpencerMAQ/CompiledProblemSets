@@ -6,4 +6,3 @@
 # (without duplicates). Make sure your program works on two lists of different sizes.
 
 # http://www.practicepython.org/exercise/2014/03/05/05-list-overlap.html
-
