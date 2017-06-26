@@ -18,6 +18,14 @@
 
 import random as r
 
-a = [r.randint(0, 100) for i in range(25)]
+# nested list comprehension
+rands = [x for x in [r.randint(0, 500) for i in range(1000)] if x%2 == 0]
 
-print(a)
+less_than_five = [var for var in rands if var <= 5]
+
+print(less_than_five)
+
+## equivalent for loop
+# for elem in rands:
+#     if elem < 5:
+#         less_than_five.append()
