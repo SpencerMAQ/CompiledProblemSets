@@ -1,10 +1,14 @@
-a = [7,8,5,4,9,2,5,5,10,3,1]
+a = [7, 8, 5, 4, 9, 2, 5, 5, 10, 3, 1]
 
 for i in range(1, len(a)):
 
     # loop starts at 1 because 0-1 = -1, and would cause an Index Error
     # the list is reversed so that the algorithm would start comparing from the last item
-    for j in range(1, i + 1)[::-1]:
+    # for j in range(1, i + 1)[::-1]:
+    # equivalent:
+    for j in range(i, 0, -1):
+        # for example if i = 5, then range 5, 4, 3, 2, 1 (the 2nd arg is not incluided!)
+
         # print(str(j) + "\n")
 
         # Here's how this works
