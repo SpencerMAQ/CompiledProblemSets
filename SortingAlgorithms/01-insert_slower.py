@@ -20,4 +20,8 @@ for i in range(1, len(a)):
         if a[j-1] > a[j]:
             a[j-1], a[j] = a[j], a[j-1]
 
+        # only breaks out from the inner for loop
+        else:
+            break
+
 print(a)
