@@ -1,5 +1,7 @@
-a = [7, 8, 5, 4, 9, 2, 5, 5, 10, 3, 1]
+a = [100, 7, 8, 5, 4, 9, 2, 5, 5, 10, 3, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2]
 
+
+# stupid attempt
 # ctr = 0
 # for i in range(len(a)-1):
 #     ctr = 0
@@ -20,7 +22,7 @@ a = [7, 8, 5, 4, 9, 2, 5, 5, 10, 3, 1]
 # sorted_list=['True','True','True']
 # print(all(['True','True','True']) == 'True')
 
-
+# 2nd attempt: works, but I forgot it's more efficient to use boolean operators
 # while True:
 #     sorted_list = []
 #
@@ -38,7 +40,7 @@ a = [7, 8, 5, 4, 9, 2, 5, 5, 10, 3, 1]
 # print(a)
 
 _sorted = False
-while _sorted == False:
+while not _sorted: # equiv = while _sorted == False:
     _sorted = True
 
     for i in range(len(a)-1):
@@ -56,3 +58,12 @@ while _sorted == False:
             _sorted = _sorted and True
 
 print(a)
+
+# # solution by https://www.youtube.com/watch?v=YHm_4bVOe1s
+# for i in range(len(a)-1):
+#     for j in range(len(a) - 1 - i):
+#         if a[j] > a[j+1]:
+#             a[j], a[j+1] = a[j+1], a[j]
+# print(a)
+
+# I have no idea why this works but I bet my logic-based solution works faster
