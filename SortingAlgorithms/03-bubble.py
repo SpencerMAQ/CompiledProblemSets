@@ -59,6 +59,21 @@ while not _sorted: # equiv = while _sorted == False:
 
 print(a)
 
+# this solution from stackoverflow might be more efficient:
+# https://stackoverflow.com/questions/895371/bubble-sort-homework
+
+def bubble(bad_list):
+    length = len(bad_list) - 1
+    sorted = False
+
+    while not sorted:
+        sorted = True
+        for i in range(length):
+            if bad_list[i] > bad_list[i+1]:
+                sorted = False
+                bad_list[i], bad_list[i+1] = bad_list[i+1], bad_list[i]
+
+
 # # solution by https://www.youtube.com/watch?v=YHm_4bVOe1s
 # for i in range(len(a)-1):
 #     for j in range(len(a) - 1 - i):
