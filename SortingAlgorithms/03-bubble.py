@@ -1,6 +1,5 @@
 a = [7, 8, 5, 4, 9, 2, 5, 5, 10, 3, 1]
 
-_sorted = False
 # ctr = 0
 # for i in range(len(a)-1):
 #     ctr = 0
@@ -16,29 +15,44 @@ _sorted = False
 #
 # print(a)
 
-a = [7, 8, 5, 4, 9, 2]
+# a = [7, 8, 5, 4, 9, 2]
 
-sorted_list=['True','True','True']
-print(all(['True','True','True']) == 'True')
+# sorted_list=['True','True','True']
+# print(all(['True','True','True']) == 'True')
 
 
-while any(sorted_list)
 # while True:
-#
 #     sorted_list = []
-#
-#     if all(sorted_list) == 'True':
-#         break
 #
 #     for i in range(len(a)-1):
 #         if a[i] > a[i+1]:
 #             a[i], a[i + 1] = a[i + 1], a[i]
-#             sorted_list.append('False')
+#             sorted_list.append(False)
 #
 #         else:
-#             sorted_list.append('True')
+#             sorted_list.append(True)
 #
-#
-#
+#     if all([i == True for i in sorted_list]):
+#         break
 #
 # print(a)
+
+_sorted = False
+while _sorted == False:
+    _sorted = True
+
+    for i in range(len(a)-1):
+        if a[i] > a[i+1]:
+            a[i], a[i + 1] = a[i + 1], a[i]
+            # The way boolean logic is like this:
+            # True and False = False
+            # i.e. as long as any exchange is made, _sorted is set to false
+            # _sorted = False iff there isn't a single exchange made
+            _sorted = _sorted and False
+
+        else:
+            # if _sorted was previously 'False'
+            # this boolean expression would still result to 'True'
+            _sorted = _sorted and True
+
+print(a)
